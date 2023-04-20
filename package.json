@@ -1,6 +1,6 @@
 {
-  "version": "1.5.5",
-  "name": "@manuhook/react-native-image-transformer",
+  "version": "1.5.7",
+  "name": "react-native-image-transformer",
   "description": "An easy and simple to use React Native component to transform and translate an image with gestures like pan, pinch and double tap.  Supporting both iOS and Android. Free and made possible along with costly maintenance and updates by [Lue Hang](https://www.facebook.com/lue.hang) (the author).",
   "keywords": [
     "react-native-image-transformer",
@@ -35,10 +35,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/manuhook/react-native-image-transformer"
+    "url": "https://github.com/manuhook/react-native-image-transformer.git"
   },
   "bugs": {
-    "url": "https://github.com/Luehang/react-native-image-transformer/issues"
+    "url": "https://github.com/manuhook/react-native-image-transformer/issues"
   },
   "directories": {
     "src": "./src"
@@ -52,7 +52,7 @@
   ],
   "dependencies": {
     "prop-types": "^15.6.2",
-    "@manuhook/react-native-easy-view-transformer": "^1.2.3"
+    "react-native-easy-view-transformer": "github:github.com/manuhook/react-native-easy-view-transformer@1.2.0"
   },
   "peerDependencies": {
     "react": "*",
@@ -64,6 +64,7 @@
     "@babel/core": "^7.4.0",
     "@babel/runtime": "^7.4.0",
     "babel-jest": "^24.5.0",
+    "deprecated-react-native-prop-types": "^4.0.0",
     "jest": "^24.5.0",
     "metro-react-native-babel-preset": "^0.53.1",
     "react-test-renderer": "16.8.3",

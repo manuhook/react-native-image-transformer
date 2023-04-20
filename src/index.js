@@ -1,7 +1,8 @@
-import ViewTransformer from "@ericedouard/react-native-easy-view-transformer";
+import ViewTransformer from "react-native-easy-view-transformer";
+import { ViewPropTypes } from 'deprecated-react-native-prop-types';
 import PropTypes from "prop-types";
 import React from "react";
-import { Dimensions, Image, Text, View, ViewPropTypes } from "react-native";
+import { Dimensions, Image, Text, View } from "react-native";
 
 export default class ImageTransformer extends React.Component {
     static propTypes = {
@@ -73,6 +74,8 @@ export default class ImageTransformer extends React.Component {
         this.renderError = this.renderError.bind(this);
         this.onOrientation = this.onOrientation.bind(this);
 
+        this._listener = null;
+
         this.state = {
             viewWidth: 0,
             viewHeight: 0,
@@ -92,7 +95,7 @@ export default class ImageTransformer extends React.Component {
         this._mounted = true;
 
         // TO DO: Find better way to get initial states
-        Dimensions.addEventListener("change", this.onOrientation);
+        this._listener = Dimensions.addEventListener("change", this.onOrientation);
         if (!this.state.source) {
             this.getImageSource(this.props.image);
         }
@@ -134,7 +137,7 @@ export default class ImageTransformer extends React.Component {
     }
 
     componentWillUnmount () {
-        Dimensions.removeEventListener("change", this.onOrientation);
+        this._listener?.remove();
         this._mounted = false;
     }
 
